@@ -55,7 +55,7 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .category{aspect-ratio:.91;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .category .panel-photo{object-position:center 85%}
 #swimwear .panel-photo{object-position:center 73%}
-#jewelry .panel-photo{inset:auto;left:-47.5%;bottom:0;width:195%;height:auto;max-width:none}
+#jewelry .panel-photo{inset:auto;left:-47.5%;bottom:0;width:195%;height:auto;max-width:none;filter:brightness(.85)}
 .category-copy p{font-size:clamp(14px,2.05vw,29px);font-weight:600;text-transform:uppercase;line-height:1.2}
 .category-copy h2{font-family:'Montserrat',sans-serif;font-size:clamp(23px,3.15vw,45px);font-weight:600;line-height:1.1;text-transform:uppercase}
 .button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:clamp(7px,1.4vw,20px);background:var(--coral);color:var(--cream);text-align:center;transition:background .18s ease,transform .18s ease}
