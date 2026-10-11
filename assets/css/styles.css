@@ -63,8 +63,7 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .category-button{position:absolute;bottom:10%;min-width:41%;padding:clamp(8px,1vw,14px) 16px;border-radius:8px;font-size:clamp(11px,1.3vw,18px);font-weight:500}
 .category-button:disabled{cursor:default;opacity:1}
 .salt-ribbon{margin-top:clamp(52px,8vw,115px);height:clamp(70px,9.5vw,136px);display:flex;align-items:center;overflow:hidden;border-radius:var(--round);background:var(--brown);color:#dacfc0}
-.salt-ribbon>div{flex:none;white-space:nowrap;line-height:1.2;font-size:clamp(16px,2.2vw,32px);font-weight:400;padding-left:30px}
-.salt-ribbon span{margin:0 .24em}
+.salt-ribbon>div{flex:none;display:flex;align-items:center;justify-content:space-between;width:90%;margin-inline:auto;white-space:nowrap;line-height:1.2;font-size:clamp(13px,2.2vw,32px);font-weight:400}
 .story{display:grid;grid-template-columns:1.14fr 1fr;gap:clamp(34px,5vw,72px);align-items:center;margin:clamp(56px,7.6vw,110px) clamp(0px,1.67vw,24px) 0}
 .story-photo{width:100%;height:auto;aspect-ratio:4/5}
 .story-ocean .story-photo>img{object-position:center bottom}
@@ -160,7 +159,8 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   #jewelry .panel-photo{inset:-10px -18px;width:calc(100% + 36px);height:calc(100% + 20px);object-position:center 100%;transform:translateY(-10px)}
   #jewelry::after{opacity:.5}
   .salt-ribbon{margin-top:44px;height:64px}
-  .salt-ribbon>div{padding-left:20px;font-size:17px}
+  .salt-ribbon>div{display:block;width:auto;margin-inline:0;padding-left:20px;font-size:17px}
+  .salt-ribbon .ribbon-dot{margin:0 .24em}
   .story,.story-community{grid-template-columns:1fr;gap:30px;margin:44px 0 0}
   .story-photo{aspect-ratio:4/5;max-height:590px}
   .story-copy h2{font-size:clamp(30px,8.1vw,42px);line-height:1.04}
