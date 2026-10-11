@@ -43,7 +43,7 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 /* Photo framing follows the crop visible in the supplied 1440px wireframe. */
 .hero .panel-photo{inset:auto;left:-12.6%;top:-15.9%;width:115.5%;height:auto;max-width:none}
 .hero-copy{position:absolute;top:22%;right:4%;width:46%;text-align:center}
-.hero h1{font-size:clamp(42px,8vw,115px);line-height:1.06;white-space:nowrap}
+.hero h1{font-size:clamp(37.8px,7.2vw,103.5px);line-height:1.06;white-space:nowrap}
 .hero p{margin-top:8px;font-size:clamp(19px,3.2vw,46px);font-weight:500;line-height:1.05;letter-spacing:-.025em}
 .hero-hit-area{position:absolute;inset:0}
 .collection{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.95vw,28px);margin-top:clamp(38px,5.3vw,76px)}
@@ -143,7 +143,7 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .hero{aspect-ratio:1.1}
   .hero .panel-photo{inset:auto;left:0;bottom:0;width:100%;height:115%;object-position:center bottom}
   .hero-copy{width:calc(100% - 28px);left:50%;right:auto;top:auto;bottom:9%;transform:translateX(-50%);text-align:center}
-  .hero h1{font-size:clamp(42px,11vw,70px)}
+  .hero h1{font-size:clamp(37.8px,9.9vw,63px)}
   .hero p{font-size:clamp(18px,4.4vw,27px);margin-top:5px}
   .hero::after{background:linear-gradient(transparent 30%,#302a285e)}
   .collection{gap:12px;margin-top:28px;grid-template-columns:1fr 1fr}
