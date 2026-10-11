@@ -38,11 +38,16 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .page-shell{max-width:1440px;padding:0 var(--gutter);margin:auto}
 .photo-panel{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--round);color:var(--cream)}
 .panel-photo{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover}
-.photo-panel::after{content:'';position:absolute;z-index:-1;inset:0;background:rgba(61,42,30,.22);pointer-events:none}
+.photo-panel::after,.photo-frame::after{content:'';position:absolute;inset:0;background:var(--brown);opacity:.2;pointer-events:none}
+.photo-panel::after{z-index:-1}
+.photo-frame{position:relative;overflow:hidden;border-radius:var(--round)}
+.photo-frame>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo-frame::after{z-index:1}
 .hero{aspect-ratio:1.9}
+.hero::after{opacity:.3}
 /* Photo framing follows the crop visible in the supplied 1440px wireframe. */
 .hero .panel-photo{inset:auto;left:-12.6%;top:-15.9%;width:115.5%;height:auto;max-width:none}
-.hero-copy{position:absolute;top:22%;right:4%;width:46%;text-align:center}
+.hero-copy{position:absolute;top:22%;right:calc(4% - 3px);width:46%;text-align:center}
 .hero h1{font-size:clamp(37.8px,7.2vw,103.5px);line-height:1.06;white-space:nowrap}
 .hero p{margin-top:6px;font-size:clamp(19px,3.2vw,46px);font-weight:500;line-height:1.05;letter-spacing:-.025em}
 .hero-hit-area{position:absolute;inset:0}
@@ -51,18 +56,18 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .category .panel-photo{object-position:center 85%}
 #swimwear .panel-photo{object-position:center 73%}
 #jewelry .panel-photo{inset:auto;left:-24.5%;top:-94.5%;width:151%;height:auto;max-width:none}
-.category::after{background:rgba(71,46,29,.25)}
 .category-copy p{font-size:clamp(14px,2.05vw,29px);font-weight:400;text-transform:uppercase;line-height:1.2}
 .category-copy h2{font-family:'Montserrat',sans-serif;font-size:clamp(23px,3.15vw,45px);font-weight:600;line-height:1.1;text-transform:uppercase}
 .button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:clamp(7px,1.4vw,20px);background:var(--coral);color:var(--cream);text-align:center;transition:background .18s ease,transform .18s ease}
-.button:hover{background:#d9644d;transform:translateY(-2px)}
+.button:not(:disabled):hover{background:#d9644d;transform:translateY(-2px)}
 .category-button{position:absolute;bottom:10%;min-width:41%;padding:clamp(8px,1vw,14px) 16px;border-radius:8px;font-size:clamp(11px,1.3vw,18px);font-weight:500}
+.category-button:disabled{cursor:default;opacity:1}
 .salt-ribbon{margin-top:clamp(52px,8vw,115px);height:clamp(70px,9.5vw,136px);display:flex;align-items:center;overflow:hidden;border-radius:var(--round);background:var(--brown);color:#dacfc0}
 .salt-ribbon>div{flex:none;white-space:nowrap;line-height:1.2;font-size:clamp(16px,2.2vw,32px);font-weight:400;padding-left:30px}
 .salt-ribbon span{margin:0 .24em}
 .story{display:grid;grid-template-columns:1.14fr 1fr;gap:clamp(34px,5vw,72px);align-items:center;margin:clamp(56px,7.6vw,110px) clamp(0px,1.67vw,24px) 0}
-.story-photo{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--round)}
-.story-ocean .story-photo{object-position:center bottom}
+.story-photo{width:100%;height:auto;aspect-ratio:4/5}
+.story-ocean .story-photo>img{object-position:center bottom}
 .story-copy h2{font-size:clamp(26px,3.6vw,52px);line-height:1.02;letter-spacing:-.035em}
 .story-copy>p{font-size:clamp(16px,2.12vw,30.5px);line-height:1.12;color:var(--muted);margin-top:clamp(24px,3.4vw,49px);letter-spacing:-.025em}
 .story-button{width:100%;min-height:clamp(48px,5.6vw,80px);font-size:clamp(17px,2.55vw,36px);margin-top:clamp(26px,3vw,43px);padding:12px 18px}
@@ -70,7 +75,6 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .closing-section{margin-top:clamp(64px,7.6vw,110px)}
 .dive-banner{aspect-ratio:1.84;border-bottom-left-radius:0;border-bottom-right-radius:0}
 .dive-banner .panel-photo{inset:auto;left:0;top:-41.4%;width:126.2%;height:auto;max-width:none}
-.dive-banner::after{background:rgba(35,45,34,.22)}
 .dive-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px 8%}
 .dive-copy h2{font-size:clamp(76px,13.2vw,190px);line-height:1.05}
 .dive-copy p{font-size:clamp(18px,3vw,43px);font-weight:600;line-height:1.05;letter-spacing:-.015em}
@@ -96,7 +100,7 @@ dialog h2{font-size:clamp(32px,4vw,48px);line-height:1.05;margin-bottom:22px}
 dialog p{font-size:16px;line-height:1.65;margin:16px 0;color:var(--muted)}
 dialog .button{font-size:16px;padding:14px 20px;border-radius:9px;margin-top:14px}
 .collection-dialog[open]{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px}
-.collection-dialog>img{border-radius:10px;width:100%;aspect-ratio:3/4;object-fit:cover}
+.collection-dialog>.photo-frame{border-radius:10px;width:100%;aspect-ratio:3/4}
 dialog .eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 16px;color:var(--brown)}
 .text-dialog{max-width:740px}
 .journal-entry{padding:20px 0;border-top:1px solid #563e3633}
@@ -119,7 +123,8 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .story-copy h2{font-size:clamp(26px,3.75vw,38px)}
   .story-copy>p{font-size:clamp(15px,2.05vw,20px);line-height:1.25;margin-top:22px}
   .story-button{font-size:19px;margin-top:24px}
-  .story-photo{height:100%;min-height:400px;aspect-ratio:auto}
+  .story-photo{height:100%;min-height:400px;aspect-ratio:765/1024}
+  .story-community .story-photo{aspect-ratio:820/1024}
   .footer-brand{flex-basis:38%}
   .footer-inner{padding:26px calc(var(--gutter) + 30px);min-height:270px}
 }
@@ -145,7 +150,6 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .hero-copy{width:calc(100% - 28px);left:50%;right:auto;top:auto;bottom:9%;transform:translateX(-50%);text-align:center}
   .hero h1{font-size:clamp(37.8px,9.9vw,63px)}
   .hero p{font-size:clamp(18px,4.4vw,27px);margin-top:5px}
-  .hero::after{background:linear-gradient(transparent 30%,#302a285e)}
   .collection{gap:12px;margin-top:28px;grid-template-columns:1fr 1fr}
   .category{aspect-ratio:.77}
   .category:last-child{grid-column:1/-1;aspect-ratio:1.8}
@@ -153,8 +157,6 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .category-copy h2{font-size:clamp(20px,5.2vw,28px)}
   .category-button{font-size:11px;padding:9px 12px;bottom:9%}
   #jewelry .panel-photo{inset:0;width:100%;height:100%;object-position:center 100%}
-  #jewelry .category-copy{align-self:flex-end;width:49%}
-  #jewelry .category-button{right:9%}
   .salt-ribbon{margin-top:44px;height:64px}
   .salt-ribbon>div{padding-left:20px;font-size:17px}
   .story,.story-community{grid-template-columns:1fr;gap:30px;margin:44px 0 0}
@@ -178,6 +180,7 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .footer-links>div{gap:10px}
   dialog{padding:44px 24px 28px}
   .collection-dialog[open]{grid-template-columns:1fr;gap:24px}
-  .collection-dialog>img{max-height:270px;object-position:center 35%}
+  .collection-dialog>.photo-frame{max-height:270px}
+  .collection-dialog>.photo-frame>img{object-position:center 35%}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=subtitle-up-2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=palette-brown-tints">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body id="top">
@@ -54,24 +54,24 @@
       <article class="category photo-panel" id="swimwear">
         <img class="panel-photo" src="assets/images/swimwear.png" width="680" height="1024" alt="Pink and chocolate sun-print one-piece swimsuit" loading="lazy">
         <div class="category-copy"><p>Stylish</p><h2>Swimwear</h2></div>
-        <button class="button category-button" type="button" data-open="swimwear-dialog">Shop swimwear</button>
+        <button class="button category-button" type="button" disabled>Shop swimwear</button>
       </article>
       <article class="category photo-panel" id="wetsuits">
         <img class="panel-photo" src="assets/images/wetsuits.png" width="683" height="1024" alt="Chocolate and cream floral surf suit beside a yellow surfboard" loading="lazy">
         <div class="category-copy"><p>Durable</p><h2>Wetsuits</h2></div>
-        <button class="button category-button" type="button" data-open="wetsuits-dialog">Shop wetsuits</button>
+        <button class="button category-button" type="button" disabled>Shop wetsuits</button>
       </article>
       <article class="category photo-panel" id="jewelry">
         <img class="panel-photo" src="assets/images/jewelry.png" width="533" height="762" alt="White shell necklace with a large cowrie shell pendant" loading="lazy">
         <div class="category-copy"><p>Siren</p><h2>Jewelry</h2></div>
-        <button class="button category-button" type="button" data-open="jewelry-dialog">Shop jewelry</button>
+        <button class="button category-button" type="button" disabled>Shop jewelry</button>
       </article>
     </section>
 
     <div class="salt-ribbon" aria-label="Salt, swim, Sun Drenched"><div aria-hidden="true">SALT <span>•</span> SWIM <span>•</span> SUN DRENCHED <span>•</span> SALT <span>•</span> SWIM <span>•</span> SUN DRENCHED <span>•</span> SALT <span>•</span> SWIM <span>•</span> SUN DRENCHED</div></div>
 
     <section class="story story-ocean" id="ocean" aria-labelledby="ocean-title">
-      <img class="story-photo" src="assets/images/ocean-care.png" width="765" height="1024" alt="A snorkeler observing a coral nursery beneath clear blue water" loading="lazy">
+      <div class="story-photo photo-frame"><img src="assets/images/ocean-care.png" width="765" height="1024" alt="A snorkeler observing a coral nursery beneath clear blue water" loading="lazy"></div>
       <div class="story-copy">
         <h2 id="ocean-title">We Think It’s Cool To<br>Care About The Ocean.</h2>
         <p>The ocean is where we feel most at home. It gives us slow mornings, wild adventures, and a reason to keep coming back. Caring for it starts with the little things: leaving the beach cleaner, giving marine life room, and being thoughtful about what we bring along. We’re here to celebrate that connection, and the everyday choices that keep our favorite places beautiful.</p>
@@ -85,7 +85,7 @@
         <p>Good days are even better when they’re shared. Meet the people who make beach life their own, find a little inspiration for your next adventure, and settle into stories from the shore. From first waves to favorite swimming spots, our community is about showing up as you are. Bring your curiosity, your sunniest friend, and a story to tell. There’s always room for you here.</p>
         <button class="button story-button" type="button" data-open="journal-dialog">Explore our journal</button>
       </div>
-      <img class="story-photo" src="assets/images/community.png" width="820" height="1024" alt="Two friends in matching chocolate sun-print swimwear running out of the sea" loading="lazy">
+      <div class="story-photo photo-frame"><img src="assets/images/community.png" width="820" height="1024" alt="Two friends in matching chocolate sun-print swimwear running out of the sea" loading="lazy"></div>
     </section>
 
     <div class="closing-section">
@@ -122,17 +122,17 @@
 
   <dialog id="swimwear-dialog" class="collection-dialog" aria-labelledby="swimwear-title">
     <button class="dialog-close" type="button" aria-label="Close swimwear collection" data-close>×</button>
-    <img src="assets/images/swimwear.png" width="680" height="1024" alt="Pink and brown sun-print swimsuit" loading="lazy">
+    <div class="photo-frame"><img src="assets/images/swimwear.png" width="680" height="1024" alt="Pink and brown sun-print swimsuit" loading="lazy"></div>
     <div><p class="eyebrow">The Heat Wave collection</p><h2 id="swimwear-title">Sun on your skin.<br>Salt in your hair.</h2><p>Meet playful prints and warm, beach-day colors. Our swimwear collection brings a little extra sunshine to your next dip, from the first swim of the morning to the last light on the water.</p><a class="button" href="mailto:info@sundrenched.com?subject=Swimwear%20collection">Ask about this collection</a></div>
   </dialog>
   <dialog id="wetsuits-dialog" class="collection-dialog" aria-labelledby="wetsuits-title">
     <button class="dialog-close" type="button" aria-label="Close wetsuit collection" data-close>×</button>
-    <img src="assets/images/wetsuits.png" width="683" height="1024" alt="Floral long-sleeved surf suit" loading="lazy">
+    <div class="photo-frame"><img src="assets/images/wetsuits.png" width="683" height="1024" alt="Floral long-sleeved surf suit" loading="lazy"></div>
     <div><p class="eyebrow">Out past the shore</p><h2 id="wetsuits-title">One more wave.</h2><p>Bold florals, earthy colors, and a love of being in the water. Explore the surf-suit direction behind Sun Drenched, with long sleeves and a little personality for your ocean days.</p><a class="button" href="mailto:info@sundrenched.com?subject=Wetsuit%20collection">Ask about this collection</a></div>
   </dialog>
   <dialog id="jewelry-dialog" class="collection-dialog" aria-labelledby="jewelry-title">
     <button class="dialog-close" type="button" aria-label="Close jewelry collection" data-close>×</button>
-    <img src="assets/images/jewelry.png" width="533" height="762" alt="Cowrie shell necklace" loading="lazy">
+    <div class="photo-frame"><img src="assets/images/jewelry.png" width="533" height="762" alt="Cowrie shell necklace" loading="lazy"></div>
     <div><p class="eyebrow">A little piece of the coast</p><h2 id="jewelry-title">Follow your inner siren.</h2><p>Ocean-inspired details to carry the feeling of the shoreline with you. Discover soft whites, natural shapes, and statement shells that feel right at home with sun-warmed skin.</p><a class="button" href="mailto:info@sundrenched.com?subject=Jewelry%20collection">Ask about this collection</a></div>
   </dialog>
   <dialog id="ocean-dialog" class="text-dialog" aria-labelledby="ocean-dialog-title">
