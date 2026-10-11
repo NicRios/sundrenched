@@ -1,14 +1,150 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sun Drenched — Prototype</title><meta name="description" content="Sun Drenched website prototype. A work in progress by Mindy Caito.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/css/styles.css"><script src="assets/js/main.js" defer></script>
-</head><body class="sun">
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><a class="wordmark" href="./">Sun Drenched</a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Main navigation"><a href="#collection">Collection</a><a href="#our-world">Our world</a><a href="#details">The details</a></nav></header>
-<main id="main"><section class="hero"><div><p class="eyebrow">Design prototype · In progress</p><h1>Made for days<br>in the sun.</h1><p class="intro">A swimwear brand taking shape. This is the beginning of the Sun Drenched experience.</p><a class="button" href="#collection">Explore the direction <span aria-hidden="true">↗</span></a></div><div class="hero-art" aria-hidden="true"><span class="art-label">A new perspective, taking shape.</span></div></section>
-<section class="section" id="collection"><p class="eyebrow">01 / Collection</p><h2>The next collection starts here.</h2><p>Space for original swimwear designs, considered details, and the moments that inspire them.</p><div class="cards"><article class="card"><div class="placeholder">Visual to come</div><h3>Silhouettes</h3><p>A place for silhouettes as the design develops.</p></article><article class="card"><div class="placeholder">Visual to come</div><h3>Color stories</h3><p>A place for color stories as the design develops.</p></article><article class="card"><div class="placeholder">Visual to come</div><h3>Finishing touches</h3><p>A place for finishing touches as the design develops.</p></article></div></section>
-<div class="story" id="our-world"><section class="section"><p class="eyebrow">02 / Our world</p><h2>A lifestyle, not just a product.</h2><p>The direction: a brand world that connects the collection to the feeling of a sun-filled day.</p></section></div>
-<section class="section details" id="details"><p class="eyebrow">03 / The details</p><h2>This is just the beginning.</h2><details><summary>What is this preview?</summary><p>This is a design prototype in progress. Layout, imagery, and content will evolve as the project develops.</p></details><details><summary>What comes next?</summary><p>Original product imagery, collection pages, fit information, and the shopping journey.</p></details></section></main>
-<footer class="site-footer"><span>Sun Drenched · Design prototype by Mindy Caito</span><a href="#main">Back to top ↑</a></footer>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sun Drenched — Salt, Swim & Sun</title>
+  <meta name="description" content="A little salt, a little sunshine. Explore Sun Drenched swimwear, wetsuits, jewelry, and stories from a life by the ocean.">
+  <meta name="theme-color" content="#533d37">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="utility-bar">
+    <div class="utility-inner">
+      <span>A little salt. A little sunshine.</span>
+      <nav aria-label="Utility navigation">
+        <button type="button" data-open="care-dialog">Care guide</button>
+        <a href="mailto:info@sundrenched.com">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </div>
+  <header class="site-header">
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#collection">Shop</a>
+      <a href="#ocean">About us</a>
+      <a class="brand" href="#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
+      <button type="button" data-open="journal-dialog">Blog</button>
+      <a href="#community">Community</a>
+    </nav>
+    <div class="mobile-header">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
+      <a class="brand" href="#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
+      <a class="mobile-shop" href="#collection">Shop <span aria-hidden="true">↗</span></a>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#collection">Shop the collection</a><a href="#ocean">About us</a><button type="button" data-open="journal-dialog">The blog</button><a href="#community">Our community</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="hero photo-panel" aria-labelledby="hero-title">
+      <img class="panel-photo" src="assets/images/heat-wave.png" width="1024" height="572" fetchpriority="high" alt="A surfer in a pink floral suit in the water beneath the green mountains of Oahu">
+      <div class="hero-copy"><h1 id="hero-title">Heat Wave</h1><p>New Swimwear<br>Collection Live Now!</p><a class="hero-hit-area" href="#collection" aria-label="Explore the Heat Wave collection"></a></div>
+    </section>
+
+    <section class="collection" id="collection" aria-label="Shop the collection">
+      <article class="category photo-panel" id="swimwear">
+        <img class="panel-photo" src="assets/images/swimwear.png" width="680" height="1024" alt="Pink and chocolate sun-print one-piece swimsuit" loading="lazy">
+        <div class="category-copy"><p>Stylish</p><h2>Swimwear</h2></div>
+        <button class="button category-button" type="button" data-open="swimwear-dialog">Shop swimwear</button>
+      </article>
+      <article class="category photo-panel" id="wetsuits">
+        <img class="panel-photo" src="assets/images/wetsuits.png" width="683" height="1024" alt="Chocolate and cream floral surf suit beside a yellow surfboard" loading="lazy">
+        <div class="category-copy"><p>Durable</p><h2>Wetsuits</h2></div>
+        <button class="button category-button" type="button" data-open="wetsuits-dialog">Shop wetsuits</button>
+      </article>
+      <article class="category photo-panel" id="jewelry">
+        <img class="panel-photo" src="assets/images/jewelry.png" width="533" height="762" alt="White shell necklace with a large cowrie shell pendant" loading="lazy">
+        <div class="category-copy"><p>Siren</p><h2>Jewelry</h2></div>
+        <button class="button category-button" type="button" data-open="jewelry-dialog">Shop jewelry</button>
+      </article>
+    </section>
+
+    <div class="salt-ribbon" aria-label="Salt, swim, Sun Drenched"><div aria-hidden="true">SALT <span>•</span> SWIM <span>•</span> SUN DRENCHED <span>•</span> SALT <span>•</span> SWIM <span>•</span> SUN DRENCHED <span>•</span> SALT <span>•</span> SWIM <span>•</span> SUN DRENCHED</div></div>
+
+    <section class="story story-ocean" id="ocean" aria-labelledby="ocean-title">
+      <img class="story-photo" src="assets/images/ocean-care.png" width="765" height="1024" alt="A snorkeler observing a coral nursery beneath clear blue water" loading="lazy">
+      <div class="story-copy">
+        <h2 id="ocean-title">We Think It’s Cool To<br>Care About The Ocean.</h2>
+        <p>The ocean is where we feel most at home. It gives us slow mornings, wild adventures, and a reason to keep coming back. Caring for it starts with the little things: leaving the beach cleaner, giving marine life room, and being thoughtful about what we bring along. We’re here to celebrate that connection, and the everyday choices that keep our favorite places beautiful.</p>
+        <button class="button story-button" type="button" data-open="ocean-dialog">Our ocean, our home</button>
+      </div>
+    </section>
+
+    <section class="story story-community" id="community" aria-labelledby="community-title">
+      <div class="story-copy">
+        <h2 id="community-title">Explore Our Blogs and<br>Join Our Community.</h2>
+        <p>Good days are even better when they’re shared. Meet the people who make beach life their own, find a little inspiration for your next adventure, and settle into stories from the shore. From first waves to favorite swimming spots, our community is about showing up as you are. Bring your curiosity, your sunniest friend, and a story to tell. There’s always room for you here.</p>
+        <button class="button story-button" type="button" data-open="journal-dialog">Explore our journal</button>
+      </div>
+      <img class="story-photo" src="assets/images/community.png" width="820" height="1024" alt="Two friends in matching chocolate sun-print swimwear running out of the sea" loading="lazy">
+    </section>
+
+    <div class="closing-section">
+      <section class="dive-banner photo-panel" aria-labelledby="dive-title">
+        <img class="panel-photo" src="assets/images/dive-in.png" width="1024" height="765" alt="A snorkeler in a floral swimsuit sitting on the sandy seafloor beside a stingray" loading="lazy">
+        <a class="dive-copy" href="#collection"><h2 id="dive-title">Dive In!</h2><p>Shop our new limited spring<br>collection. Up to 30% off select items</p></a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="Sun Drenched home"><span class="brand-crop brand-crop--footer" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt="" loading="lazy"></span></a>
+          <address>91-534 Aekai Place,<br>Ewa Beach, HI<br><a href="mailto:info@sundrenched.com">info@sundrenched.com</a></address>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div><h2>Explore</h2><a href="#collection">Shop all</a><a href="#ocean">Our story</a><button type="button" data-open="journal-dialog">The journal</button><a href="#community">Community</a></div>
+          <div><h2>A little help</h2><button type="button" data-open="care-dialog">Care guide</button><button type="button" data-open="faq-dialog">FAQs</button><a href="mailto:info@sundrenched.com">Contact us</a><a href="#top">Back to the top ↑</a></div>
+        </nav>
+    </div>
+  </footer>
+
+  <dialog id="swimwear-dialog" class="collection-dialog" aria-labelledby="swimwear-title">
+    <button class="dialog-close" type="button" aria-label="Close swimwear collection" data-close>×</button>
+    <img src="assets/images/swimwear.png" width="680" height="1024" alt="Pink and brown sun-print swimsuit" loading="lazy">
+    <div><p class="eyebrow">The Heat Wave collection</p><h2 id="swimwear-title">Sun on your skin.<br>Salt in your hair.</h2><p>Meet playful prints and warm, beach-day colors. Our swimwear collection brings a little extra sunshine to your next dip, from the first swim of the morning to the last light on the water.</p><a class="button" href="mailto:info@sundrenched.com?subject=Swimwear%20collection">Ask about this collection</a></div>
+  </dialog>
+  <dialog id="wetsuits-dialog" class="collection-dialog" aria-labelledby="wetsuits-title">
+    <button class="dialog-close" type="button" aria-label="Close wetsuit collection" data-close>×</button>
+    <img src="assets/images/wetsuits.png" width="683" height="1024" alt="Floral long-sleeved surf suit" loading="lazy">
+    <div><p class="eyebrow">Out past the shore</p><h2 id="wetsuits-title">One more wave.</h2><p>Bold florals, earthy colors, and a love of being in the water. Explore the surf-suit direction behind Sun Drenched, with long sleeves and a little personality for your ocean days.</p><a class="button" href="mailto:info@sundrenched.com?subject=Wetsuit%20collection">Ask about this collection</a></div>
+  </dialog>
+  <dialog id="jewelry-dialog" class="collection-dialog" aria-labelledby="jewelry-title">
+    <button class="dialog-close" type="button" aria-label="Close jewelry collection" data-close>×</button>
+    <img src="assets/images/jewelry.png" width="533" height="762" alt="Cowrie shell necklace" loading="lazy">
+    <div><p class="eyebrow">A little piece of the coast</p><h2 id="jewelry-title">Follow your inner siren.</h2><p>Ocean-inspired details to carry the feeling of the shoreline with you. Discover soft whites, natural shapes, and statement shells that feel right at home with sun-warmed skin.</p><a class="button" href="mailto:info@sundrenched.com?subject=Jewelry%20collection">Ask about this collection</a></div>
+  </dialog>
+  <dialog id="ocean-dialog" class="text-dialog" aria-labelledby="ocean-dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close our ocean story" data-close>×</button>
+    <p class="eyebrow">Our ocean, our home</p><h2 id="ocean-dialog-title">Leave a little less.<br>Love it a little more.</h2>
+    <p>Sun Drenched is inspired by the feeling of a life close to the water: the freedom, the friendships, and the small moments that stay with you long after the salt has washed away.</p><p>That love comes with care. Take everything you brought to the beach home with you. Observe wildlife from a respectful distance. Leave coral, shells, and the shoreline as you found them. A thoughtful beach day is a beautiful place to start.</p><a class="button" href="#community" data-close>Meet our community</a>
+  </dialog>
+  <dialog id="journal-dialog" class="text-dialog" aria-labelledby="journal-title">
+    <button class="dialog-close" type="button" aria-label="Close the journal" data-close>×</button>
+    <p class="eyebrow">Notes from the shoreline</p><h2 id="journal-title">The Sun Drenched Journal</h2>
+    <article class="journal-entry"><h3>The joy of a slower beach day</h3><p>Pack only what you need, leave room for a friend, and let the day unfold. Sometimes the best adventure is a familiar stretch of sand, a long conversation, and no hurry to head home.</p></article>
+    <article class="journal-entry"><h3>Small ways to show the ocean some love</h3><p>Bring a reusable water bottle, keep an eye on anything that could blow away, and pick up a little extra litter before you leave. Small habits feel even better when you share them.</p></article>
+    <article class="journal-entry"><h3>Your story belongs here</h3><p>A first surf lesson. A favorite coastal walk. The friend who always says yes to a swim. Tell us about your Sun Drenched moments — we’d love to hear them.</p><a href="mailto:info@sundrenched.com?subject=My%20Sun%20Drenched%20story">Share your story ↗</a></article>
+  </dialog>
+  <dialog id="care-dialog" class="text-dialog" aria-labelledby="care-title">
+    <button class="dialog-close" type="button" aria-label="Close the care guide" data-close>×</button>
+    <p class="eyebrow">After the swim</p><h2 id="care-title">A little care goes a long way.</h2>
+    <p>Always follow the care label for your piece. After a salty or sandy day, rinse swimwear in cool fresh water, gently press out excess water, and let it dry in the shade. Avoid wringing, rough surfaces, and leaving damp pieces bundled in your beach bag.</p><p>Keep jewelry dry between wears and store it gently. For questions about a specific piece, we’re a message away.</p><a class="button" href="mailto:info@sundrenched.com?subject=Product%20care%20question">Ask a care question</a>
+  </dialog>
+  <dialog id="faq-dialog" class="text-dialog" aria-labelledby="faq-title">
+    <button class="dialog-close" type="button" aria-label="Close frequently asked questions" data-close>×</button>
+    <p class="eyebrow">A little help</p><h2 id="faq-title">Good questions.</h2>
+    <details><summary>How can I find out more about a collection?</summary><p>Open any collection card to see its design direction. For availability and product questions, email <a href="mailto:info@sundrenched.com">info@sundrenched.com</a>.</p></details>
+    <details><summary>Where can I find care information?</summary><p>Start with the care label on your piece. Our care guide has a few everyday tips for after a swim, and you can email us with specific questions.</p></details>
+    <details><summary>How can I share a story with the community?</summary><p>We’d love to hear about your ocean days. Send your story to <a href="mailto:info@sundrenched.com?subject=My%20Sun%20Drenched%20story">info@sundrenched.com</a>.</p></details>
+  </dialog>
+</body>
+</html>
