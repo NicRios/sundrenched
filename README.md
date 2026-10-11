@@ -18,11 +18,11 @@ Open http://127.0.0.1:4177/.
 
 - `index.html`: utility navigation, collection cards, ocean and community stories, promotional banner, footer, and accessible content dialogs.
 - `assets/css/styles.css`: reference palette, typography, responsive layouts, and logo framing.
-- `assets/js/main.js`: mobile navigation and dialog controls.
+- `assets/js/main.js`: mobile navigation, local collection/story search, and dialog controls.
 - `assets/images/`: supplied product, lifestyle, and underwater photography. `brand-reference.png` preserves the supplied artwork; CSS frames the original header and footer logos without recreating them.
 - `.github/workflows/pages.yml`: publishes `index.html` and `assets/` to GitHub Pages.
 
-The layout follows the wireframe on desktop and tablet, including the source-specific photo crops. DynaPuff is used as a close visual match for the reference headings; the original heading font was not supplied. Below 641px, navigation collapses to a menu, product cards use two columns, and editorial sections stack. Collection and editorial buttons open previews; email links launch the visitor's mail app. This prototype has no checkout, payments, accounts, inventory, or form backend. The displayed collection and promotional text are design copy.
+The layout follows the wireframe on desktop and tablet, including the source-specific photo crops. DynaPuff is used as a close visual match for the reference headings; the original heading font was not supplied. Below 641px, navigation collapses to a menu, product cards use two columns, and editorial sections stack. Collection and editorial buttons open previews; email links launch the visitor's mail app. Utility social icons open Instagram, TikTok, and X; replace those platform URLs when brand profiles are available. This prototype has no checkout, payments, accounts, inventory, or form backend. The displayed collection and promotional text are design copy.
 
 ## Publication and checks
 
