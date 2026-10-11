@@ -1,32 +1,31 @@
 # Sun Drenched
 
-A responsive website prototype in progress. The starter includes editable page sections, a mobile menu, accessible disclosure controls, and automatic GitHub Pages deployment. It has no checkout, account system, or backend.
+A responsive swimwear website prototype built from the supplied Sun Drenched homepage wireframe and photography.
 
-Live preview: https://nicrios.github.io/sundrenched/
+Live site: https://nicrios.github.io/sundrenched/
 
-## Develop locally
+## Local development
 
-No install or build step is required.
+This is a buildless HTML, CSS, and JavaScript site.
 
 ```sh
 python3 -m http.server 4177 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:4177/ in a browser.
+Open http://127.0.0.1:4177/.
 
-## Project structure
+## Structure
 
-- `index.html`: page content and semantic layout.
-- `assets/css/styles.css`: design tokens, layout, and mobile styles.
-- `assets/js/main.js`: mobile navigation behavior.
-- `assets/images/`: add approved photography and design assets here.
-- `assets/favicon.svg`: temporary project monogram.
-- `.github/workflows/pages.yml`: publishes only `index.html` and `assets/`.
+- `index.html`: utility navigation, collection cards, ocean and community stories, promotional banner, footer, and accessible content dialogs.
+- `assets/css/styles.css`: reference palette, typography, responsive layouts, and logo framing.
+- `assets/js/main.js`: mobile navigation, local collection/story search, and dialog controls.
+- `assets/images/`: supplied product, lifestyle, and underwater photography. `brand-reference.png` preserves the supplied artwork; CSS frames the original header and footer logos without recreating them.
+- `.github/workflows/pages.yml`: publishes `index.html` and `assets/` to GitHub Pages.
 
-## Continue the design
+The layout follows the wireframe on desktop and tablet, including the source-specific photo crops. DynaPuff is used as a close visual match for the reference headings; the original heading font was not supplied. Below 641px, navigation collapses to a menu, product cards use two columns, and editorial sections stack. Collection and editorial buttons open previews; email links launch the visitor's mail app. Utility social icons open Instagram, TikTok, and X; replace those platform URLs when brand profiles are available. This prototype has no checkout, payments, accounts, inventory, or form backend. The displayed collection and promotional text are design copy.
 
-Replace the labeled visual placeholders and draft copy with approved project material. The current theme and illustrations establish a starting direction, not a final identity. Keep URLs relative so local preview and GitHub Pages use the same files. Check narrow mobile and desktop widths after layout changes.
+## Publication and checks
 
-## Publish
+Use a feature branch and pull request. Merging to `main` deploys the site through the existing Pages workflow.
 
-Work on a feature branch and open a pull request. Merging to `main` runs the Pages workflow; it can also be started manually from Actions. Repository Pages settings use GitHub Actions. A successful deployment publishes at the live preview URL above.
+For layout changes, check 390px, 768px, and 1440px widths, verify every image loads, and exercise the menu, dialogs, Escape behavior, internal links, and footer links. Use `node --check assets/js/main.js` and `git diff --check` for the affected source.
