@@ -44,7 +44,7 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .hero .panel-photo{inset:auto;left:-12.6%;top:-15.9%;width:115.5%;height:auto;max-width:none}
 .hero-copy{position:absolute;top:22%;right:4%;width:46%;text-align:center}
 .hero h1{font-size:clamp(37.8px,7.2vw,103.5px);line-height:1.06;white-space:nowrap}
-.hero p{margin-top:8px;font-size:clamp(19px,3.2vw,46px);font-weight:500;line-height:1.05;letter-spacing:-.025em}
+.hero p{margin-top:6px;font-size:clamp(19px,3.2vw,46px);font-weight:500;line-height:1.05;letter-spacing:-.025em}
 .hero-hit-area{position:absolute;inset:0}
 .collection{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.95vw,28px);margin-top:clamp(38px,5.3vw,76px)}
 .category{aspect-ratio:.91;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
