@@ -127,6 +127,9 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .utility-inner{font-size:10px;gap:8px}
   .utility-inner>span{font-size:9px;letter-spacing:0}
   .utility-inner nav{gap:2px}
+  .utility-actions .icon-button{width:26px;height:32px}
+  .utility-actions .icon-button svg{width:14px;height:14px}
+  .utility-actions .icon-button:focus-visible{outline-width:2px;outline-offset:1px}
   .desktop-nav{display:none}
   .mobile-header{height:140px;display:grid;grid-template-columns:1fr 148px 1fr;align-items:center;gap:8px}
   .mobile-header .brand{width:148px}
