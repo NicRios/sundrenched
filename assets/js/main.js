@@ -47,6 +47,7 @@ const searchStatus = document.querySelector('#search-status');
 const searchDialog = document.querySelector('#search-dialog');
 const searchButton = document.querySelector('[data-open="search-dialog"]');
 const searchEntries = [
+  { title: 'Shop all', description: 'Browse the Sun Drenched swimwear and surf-suit collection.', keywords: 'shop products swimwear swimsuits bikini surf suits heat wave', href: 'shop.html' },
   { title: 'Swimwear', description: 'Discover the Heat Wave collection and playful sun-inspired prints.', keywords: 'swim swimsuits one piece bikini heat wave new collection', dialog: 'swimwear-dialog' },
   { title: 'Wetsuits', description: 'Bold florals and long-sleeved surf suits for ocean days.', keywords: 'surf waves long sleeve floral swim collection', dialog: 'wetsuits-dialog' },
   { title: 'Jewelry', description: 'Shells, natural shapes, and a little piece of the coast.', keywords: 'necklace shells cowrie siren accessories collection', dialog: 'jewelry-dialog' },
@@ -67,8 +68,9 @@ function renderSearch() {
     ? (matches.length ? `${matches.length} ${matches.length === 1 ? 'match' : 'matches'} for “${searchInput.value.trim()}”` : 'No matches yet. Try swimwear, ocean, or care.')
     : 'Explore our collections and stories.';
   matches.forEach(entry => {
-    const button = document.createElement('button');
-    button.type = 'button';
+    const button = document.createElement(entry.href ? 'a' : 'button');
+    if (entry.href) button.href = entry.href;
+    else button.type = 'button';
     button.className = 'search-result';
     const title = document.createElement('strong');
     const description = document.createElement('span');
@@ -77,7 +79,7 @@ function renderSearch() {
     button.append(title, description);
     button.addEventListener('click', () => {
       searchDialog.close();
-      openDialog(entry.dialog, searchButton);
+      if (entry.dialog) openDialog(entry.dialog, searchButton);
     });
     searchResults.append(button);
   });
