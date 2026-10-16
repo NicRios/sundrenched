@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=story-spacing">
+  <link rel="stylesheet" href="assets/css/styles.css?v=shop-page">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body id="top">
@@ -28,38 +28,38 @@
   </div>
   <header class="site-header">
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#collection">Shop</a>
-      <a href="#ocean">About us</a>
-      <a class="brand" href="#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
+      <a href="shop.html">Shop</a>
+      <a href="index.html#ocean">About us</a>
+      <a class="brand" href="index.html#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
       <button type="button" data-open="journal-dialog">Blog</button>
-      <a href="#community">Community</a>
+      <a href="index.html#community">Community</a>
     </nav>
     <div class="mobile-header">
-      <a class="mobile-shop" href="#collection">Shop <span aria-hidden="true">↗</span></a>
-      <a class="brand" href="#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
+      <a class="mobile-shop" href="shop.html">Shop <span aria-hidden="true">↗</span></a>
+      <a class="brand" href="index.html#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
-      <a href="#collection">Shop the collection</a><a href="#ocean">About us</a><button type="button" data-open="journal-dialog">The blog</button><a href="#community">Our community</a>
+      <a href="shop.html">Shop the collection</a><a href="index.html#ocean">About us</a><button type="button" data-open="journal-dialog">The blog</button><a href="index.html#community">Our community</a>
     </nav>
   </header>
 
   <main id="main" class="page-shell">
     <section class="hero photo-panel" aria-labelledby="hero-title">
       <img class="panel-photo" src="assets/images/heat-wave.png" width="1024" height="572" fetchpriority="high" alt="A surfer in a pink floral suit in the water beneath the green mountains of Oahu">
-      <div class="hero-copy"><h1 id="hero-title">Heat Wave</h1><p>New Swimwear<br>Collection Live Now!</p><a class="hero-hit-area" href="#collection" aria-label="Explore the Heat Wave collection"></a></div>
+      <div class="hero-copy"><h1 id="hero-title">Heat Wave</h1><p>New Swimwear<br>Collection Live Now!</p><a class="hero-hit-area" href="shop.html" aria-label="Explore the Heat Wave collection"></a></div>
     </section>
 
     <section class="collection" id="collection" aria-label="Shop the collection">
       <article class="category photo-panel" id="swimwear">
         <img class="panel-photo" src="assets/images/swimwear.png" width="680" height="1024" alt="Pink and chocolate sun-print one-piece swimsuit" loading="lazy">
         <div class="category-copy"><p>Stylish</p><h2>Swimwear</h2></div>
-        <button class="button category-button" type="button" disabled>Shop swimwear</button>
+        <a class="button category-button" href="shop.html">Shop swimwear</a>
       </article>
       <article class="category photo-panel" id="wetsuits">
         <img class="panel-photo" src="assets/images/wetsuits.png" width="683" height="1024" alt="Chocolate and cream floral surf suit beside a yellow surfboard" loading="lazy">
         <div class="category-copy"><p>Durable</p><h2>Wetsuits</h2></div>
-        <button class="button category-button" type="button" disabled>Shop wetsuits</button>
+        <a class="button category-button" href="shop.html#surf-suits">Shop wetsuits</a>
       </article>
       <article class="category photo-panel" id="jewelry">
         <img class="panel-photo" src="assets/images/jewelry.png" width="533" height="762" alt="White shell necklace with a large cowrie shell pendant" loading="lazy">
@@ -91,7 +91,7 @@
     <div class="closing-section">
       <section class="dive-banner photo-panel" aria-labelledby="dive-title">
         <img class="panel-photo" src="assets/images/dive-in.png" width="1024" height="765" alt="A snorkeler in a floral swimsuit sitting on the sandy seafloor beside a stingray" loading="lazy">
-        <a class="dive-copy" href="#collection"><h2 id="dive-title">Dive In!</h2><p>Shop our new Heat Wave collection.<br>Up to 30% off select items</p></a>
+        <a class="dive-copy" href="shop.html"><h2 id="dive-title">Dive In!</h2><p>Shop our new Heat Wave collection.<br>Up to 30% off select items</p></a>
       </section>
     </div>
   </main>
@@ -99,11 +99,11 @@
   <footer class="site-footer" id="contact">
     <div class="footer-inner">
         <div class="footer-brand">
-          <a class="brand" href="#top" aria-label="Sun Drenched home"><span class="brand-crop brand-crop--footer" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt="" loading="lazy"></span></a>
+          <a class="brand" href="index.html#top" aria-label="Sun Drenched home"><span class="brand-crop brand-crop--footer" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt="" loading="lazy"></span></a>
           <address>91-534 Aekai Place,<br>Ewa Beach, HI<br><a href="mailto:info@sundrenched.com">info@sundrenched.com</a></address>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
-          <div><h2>Explore</h2><a href="#collection">Shop all</a><a href="#ocean">Our story</a><button type="button" data-open="journal-dialog">The journal</button><a href="#community">Community</a></div>
+          <div><h2>Explore</h2><a href="shop.html">Shop all</a><a href="index.html#ocean">Our story</a><button type="button" data-open="journal-dialog">The journal</button><a href="index.html#community">Community</a></div>
           <div><h2>A little help</h2><button type="button" data-open="care-dialog">Care guide</button><button type="button" data-open="faq-dialog">FAQs</button><a href="mailto:info@sundrenched.com">Contact us</a><a href="#top">Back to the top ↑</a></div>
         </nav>
     </div>
@@ -138,7 +138,7 @@
   <dialog id="ocean-dialog" class="text-dialog" aria-labelledby="ocean-dialog-title">
     <button class="dialog-close" type="button" aria-label="Close our ocean story" data-close>×</button>
     <p class="eyebrow">Our ocean, our home</p><h2 id="ocean-dialog-title">Leave a little less.<br>Love it a little more.</h2>
-    <p>Sun Drenched is inspired by the feeling of a life close to the water: the freedom, the friendships, and the small moments that stay with you long after the salt has washed away.</p><p>That love comes with care. Take everything you brought to the beach home with you. Observe wildlife from a respectful distance. Leave coral, shells, and the shoreline as you found them. A thoughtful beach day is a beautiful place to start.</p><a class="button" href="#community" data-close>Meet our community</a>
+    <p>Sun Drenched is inspired by the feeling of a life close to the water: the freedom, the friendships, and the small moments that stay with you long after the salt has washed away.</p><p>That love comes with care. Take everything you brought to the beach home with you. Observe wildlife from a respectful distance. Leave coral, shells, and the shoreline as you found them. A thoughtful beach day is a beautiful place to start.</p><a class="button" href="index.html#community" data-close>Meet our community</a>
   </dialog>
   <dialog id="journal-dialog" class="text-dialog" aria-labelledby="journal-title">
     <button class="dialog-close" type="button" aria-label="Close the journal" data-close>×</button>

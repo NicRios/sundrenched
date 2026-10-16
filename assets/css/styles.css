@@ -117,6 +117,21 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .search-result strong{font-size:16px;font-weight:600}
 .search-result span{font-size:13px;line-height:1.45;color:var(--muted);margin-top:5px}
 .search-result:hover strong{color:#a4422f}
+/* The shop follows the product-led wireframe with a quiet, four-column grid. */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.shop-page{padding-inline:clamp(20px,4.444vw,64px);padding-bottom:clamp(72px,8.333vw,120px)}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3.056vw,44px) clamp(16px,1.667vw,24px)}
+.product-card{min-width:0}
+.product-card__image{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:8px 8px 0 0;background:#e7dfd0}
+.product-card__details{padding:12px 12px 0}
+.product-card__name{font-family:'Montserrat',Arial,sans-serif;font-size:13px;line-height:1.5;font-weight:500;color:var(--muted)}
+.product-card__price{font-size:13px;line-height:1.5;color:var(--muted);margin-top:2px}
+.shop-page+.site-footer{margin-top:0}
+@media(max-width:640px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}
+  .product-card__details{padding:10px 2px 0}
+  .product-card__name,.product-card__price{font-size:12px}
+}
 @media(max-width:1000px) and (min-width:641px){
   .story{grid-template-columns:1fr 1fr;gap:32px;margin-inline:0}
   .story-copy h2{font-size:clamp(26px,3.75vw,38px)}
