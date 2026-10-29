@@ -52,9 +52,10 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .hero p{margin-top:6px;font-size:clamp(19px,3.2vw,46px);font-weight:500;line-height:1.05;letter-spacing:-.025em}
 .hero-hit-area{position:absolute;inset:0}
 .collection{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.95vw,28px);margin-top:clamp(38px,5.3vw,76px)}
-.category{aspect-ratio:.91;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.category{box-sizing:content-box;aspect-ratio:.91;padding-block:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .category .panel-photo{object-position:center 85%}
-#swimwear .panel-photo{object-position:center 73%}
+#wetsuits .panel-photo{object-position:center 73%}
+#swimwear .panel-photo{object-position:center calc(100% + 15px)}
 #jewelry .panel-photo{inset:auto;left:-47.5%;bottom:0;width:195%;height:auto;max-width:none;filter:brightness(.85)}
 .category-copy p{font-size:clamp(14px,2.05vw,29px);font-weight:600;text-transform:uppercase;line-height:1.2}
 .category-copy h2{font-family:'Montserrat',sans-serif;font-size:clamp(23px,3.15vw,45px);font-weight:600;line-height:1.1;text-transform:uppercase}
@@ -73,10 +74,11 @@ h1,h2,h3{font-family:'DynaPuff','Arial Rounded MT Bold',cursive;font-weight:700}
 .story-community{grid-template-columns:1fr 1.14fr;margin-top:clamp(88px,10vw,144px)}
 .closing-section{margin-top:clamp(64px,7.6vw,110px)}
 .dive-banner{aspect-ratio:1.84;border-bottom-left-radius:0;border-bottom-right-radius:0}
-.dive-banner .panel-photo{inset:auto;left:0;top:-79%;width:126.2%;height:auto;max-width:none}
+.dive-banner .panel-photo{inset:auto;left:0;top:-79%;width:126.2%;height:auto;max-width:none;transform:translateY(8px)}
 .dive-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px 8%}
-.dive-copy h2{font-size:clamp(67px,11.62vw,167px);line-height:1.05}
-.dive-copy p{font-size:clamp(18px,3vw,43px);font-weight:600;line-height:1.05;letter-spacing:-.015em}
+.dive-copy>*{transform:translateY(10px)}
+.dive-copy h2{font-size:clamp(60.3px,10.458vw,150.3px);line-height:1.05}
+.dive-copy p{font-size:clamp(16.2px,2.7vw,38.7px);font-weight:600;line-height:1.05;letter-spacing:-.015em}
 .site-footer{position:relative;margin-top:-5px;border-radius:var(--round);background:var(--brown);color:#d8caba}
 .footer-inner{width:100%;max-width:1440px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:40px;min-height:350px;padding:24px calc(var(--gutter) + clamp(28px,7vw,100px)) 38px}
 .footer-brand{flex:0 0 34%}
@@ -187,8 +189,8 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .dive-banner{aspect-ratio:1.05}
   .dive-banner .panel-photo{inset:auto;left:-20%;top:-49%;width:164%;height:auto}
   .dive-copy{padding:0 18px 10%}
-  .dive-copy h2{font-size:clamp(42px,12.32vw,76px)}
-  .dive-copy p{font-size:clamp(14px,3.7vw,21px);line-height:1.15}
+  .dive-copy h2{font-size:clamp(37.8px,11.088vw,68.4px)}
+  .dive-copy p{font-size:clamp(12.6px,3.33vw,18.9px);line-height:1.15}
   .site-footer{margin-top:-5px}
   .footer-inner{flex-direction:column;align-items:stretch;gap:30px;padding:22px 46px 32px}
   .footer-brand .brand{width:180px;margin-bottom:12px}
