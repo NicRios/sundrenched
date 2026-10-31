@@ -122,6 +122,11 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 /* The shop follows the product-led wireframe with a quiet, four-column grid. */
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 .shop-page{padding-inline:clamp(20px,4.444vw,64px);padding-bottom:clamp(72px,8.333vw,120px)}
+@media(min-width:641px){
+  .site-header{width:100%}
+  .desktop-nav{padding-inline:0}
+  .site-header--shop{padding-inline:clamp(20px,4.444vw,64px)}
+}
 .product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3.056vw,44px) clamp(16px,1.667vw,24px)}
 .product-card{min-width:0}
 .product-card__image{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:8px 8px 0 0;background:#e7dfd0}
