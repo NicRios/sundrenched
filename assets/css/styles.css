@@ -159,6 +159,12 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .product-card__name{font-family:'Montserrat',Arial,sans-serif;font-size:13px;line-height:1.5;font-weight:500;color:var(--muted)}
 .product-card__price{font-size:13px;line-height:1.5;color:var(--muted);margin-top:2px}
 .shop-page+.site-footer{margin-top:0}
+/* Blog index: three thumbnails with their titles underneath (grey frames until photos are supplied; swap the div for an <img class="blog-card__image">). */
+.blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.083vw,30px)}
+.blog-card{min-width:0}
+.blog-card__image{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;border-radius:var(--round);background:#d9d9d9}
+.blog-card__title{margin-top:clamp(16px,2.4vw,34px);font-family:'Montserrat',Arial,sans-serif;font-size:clamp(17px,2.083vw,30px);font-weight:600;line-height:1;color:var(--brown);max-width:88%}
+@media(max-width:640px){.blog-grid{grid-template-columns:1fr;gap:34px}.blog-card__title{font-size:22px;line-height:1.1;max-width:none}}
 @media(max-width:640px){
   .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}
   .product-card__details{padding:10px 2px 0}
