@@ -9,8 +9,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=ribbon-text">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=closing-gap">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body id="top">
@@ -28,11 +28,15 @@
   </div>
   <header class="site-header site-header--shop">
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="shop.html" aria-current="page">Shop</a>
-      <a href="index.html#ocean">About us</a>
+      <div class="nav-group nav-group--left">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#ocean">About</a>
+      </div>
       <a class="brand" href="index.html#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
-      <button type="button" data-open="journal-dialog">Blog</button>
-      <a href="index.html#community">Community</a>
+      <div class="nav-group nav-group--right">
+        <button type="button" data-open="journal-dialog">Blog</button>
+        <a href="shop.html" aria-current="page">Shop</a>
+      </div>
     </nav>
     <div class="mobile-header">
       <a class="mobile-shop" href="shop.html" aria-current="page">Shop <span aria-hidden="true">↗</span></a>
@@ -40,7 +44,7 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
-      <a href="shop.html" aria-current="page">Shop the collection</a><a href="index.html#ocean">About us</a><button type="button" data-open="journal-dialog">The blog</button><a href="index.html#community">Our community</a>
+      <a href="index.html#top">Home</a><a href="index.html#ocean">About</a><button type="button" data-open="journal-dialog">Blog</button><a href="shop.html" aria-current="page">Shop</a>
     </nav>
   </header>
 

@@ -9,8 +9,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=ribbon-text">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=closing-gap">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body id="top">
@@ -28,11 +28,15 @@
   </div>
   <header class="site-header">
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="shop.html">Shop</a>
-      <a href="index.html#ocean">About us</a>
+      <div class="nav-group nav-group--left">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#ocean">About</a>
+      </div>
       <a class="brand" href="index.html#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
-      <button type="button" data-open="journal-dialog">Blog</button>
-      <a href="index.html#community">Community</a>
+      <div class="nav-group nav-group--right">
+        <button type="button" data-open="journal-dialog">Blog</button>
+        <a href="shop.html">Shop</a>
+      </div>
     </nav>
     <div class="mobile-header">
       <a class="mobile-shop" href="shop.html">Shop <span aria-hidden="true">↗</span></a>
@@ -40,14 +44,14 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
-      <a href="shop.html">Shop the collection</a><a href="index.html#ocean">About us</a><button type="button" data-open="journal-dialog">The blog</button><a href="index.html#community">Our community</a>
+      <a href="index.html#top">Home</a><a href="index.html#ocean">About</a><button type="button" data-open="journal-dialog">Blog</button><a href="shop.html">Shop</a>
     </nav>
   </header>
 
   <main id="main" class="page-shell">
     <section class="hero photo-panel" aria-labelledby="hero-title">
       <img class="panel-photo" src="assets/images/hero-water-portrait.jpg?v=3" width="818" height="469" fetchpriority="high" alt="A woman floating in rippled water with her head tilted back, in black and white">
-      <div class="hero-copy"><h1 id="hero-title">Heat Wave</h1><p>New Swimwear<br>Collection Live Now!</p><a class="hero-hit-area" href="shop.html" aria-label="Explore the Heat Wave collection"></a></div>
+      <div class="hero-copy"><h1 id="hero-title">Heat Wave</h1><p>New Swimwear<br>Collection Live Now!</p><a class="button hero-button" href="shop.html">Shop now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="hero-hit-area" href="shop.html" aria-label="Explore the Heat Wave collection"></a></div>
     </section>
 
     <section class="collection" id="collection" aria-label="Shop the collection">
@@ -62,28 +66,28 @@
         <a class="button category-button" href="shop.html">Shop swimwear</a>
       </article>
       <article class="category photo-panel" id="jewelry">
-        <img class="panel-photo" src="assets/images/jewelry.png" width="533" height="762" alt="White shell necklace with a large cowrie shell pendant" loading="lazy">
+        <img class="panel-photo" src="assets/images/jewelry-extended.png" width="533" height="796" alt="White shell necklace with a large cowrie shell pendant" loading="lazy">
         <div class="category-copy"><p>Siren</p><h2>Jewelry</h2></div>
         <button class="button category-button" type="button" disabled>Shop jewelry</button>
       </article>
     </section>
 
-    <div class="salt-ribbon" aria-label="Salt, swim, Sun Drenched"><div aria-hidden="true"><span>SALT</span> <span class="ribbon-dot">•</span> <span>SWIM</span> <span class="ribbon-dot">•</span> <span>SUN DRENCHED</span> <span class="ribbon-dot">•</span> <span>SALT</span> <span class="ribbon-dot">•</span> <span>SWIM</span> <span class="ribbon-dot">•</span> <span>SUN DRENCHED</span></div></div>
+    <div class="salt-ribbon" aria-label="Salt, swim, Sun Drenched"><div class="ribbon-track" aria-hidden="true"><div class="ribbon-set"><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span></div><div class="ribbon-set"><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span><span>SALT</span><span class="ribbon-dot">•</span><span>SWIM</span><span class="ribbon-dot">•</span><span>SUN DRENCHED</span><span class="ribbon-dot">•</span></div></div></div>
 
     <section class="story story-ocean" id="ocean" aria-labelledby="ocean-title">
       <div class="story-photo photo-frame"><img src="assets/images/ocean-care-coral-nursery.jpg" width="1493" height="2000" alt="A snorkeler in a patterned swimsuit examining pink and tan coral fragments hanging from an underwater nursery line" loading="lazy"></div>
       <div class="story-copy">
-        <h2 id="ocean-title">We Think It’s Cool To<br>Care About The Ocean.</h2>
+        <h2 id="ocean-title">We Think It’s Cool To Care About The Ocean.</h2>
         <p>The ocean is where we feel most at home. It gives us slow mornings, wild adventures, and a reason to keep coming back. Caring for it starts with the little things: leaving the beach cleaner, giving marine life room, and being thoughtful about what we bring along. We’re here to celebrate that connection, and the everyday choices that keep our favorite places beautiful.</p>
-        <button class="button story-button" type="button" data-open="ocean-dialog">Our ocean, our home</button>
+        <button class="button story-button" type="button" data-open="ocean-dialog">More About Us</button>
       </div>
     </section>
 
     <section class="story story-community" id="community" aria-labelledby="community-title">
       <div class="story-copy">
-        <h2 id="community-title">Explore Our Blogs and<br>Join Our Community.</h2>
+        <h2 id="community-title">Explore Our Blogs and Join Our Community.</h2>
         <p>Good days are even better when they’re shared. Meet the people who make beach life their own, find a little inspiration for your next adventure, and settle into stories from the shore. From first waves to favorite swimming spots, our community is about showing up as you are. Bring your curiosity, your sunniest friend, and a story to tell. There’s always room for you here.</p>
-        <button class="button story-button" type="button" data-open="journal-dialog">Explore our journal</button>
+        <button class="button story-button" type="button" data-open="journal-dialog">Read Our Blog</button>
       </div>
       <div class="story-photo photo-frame"><img src="assets/images/community.png" width="820" height="1024" alt="Two friends in matching chocolate sun-print swimwear running out of the sea" loading="lazy"></div>
     </section>
