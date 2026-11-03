@@ -98,10 +98,11 @@ h1,h2,h3{font-family:'Super Ocean','Arial Rounded MT Bold',cursive;font-weight:4
 .story-community{grid-template-columns:1fr 1.14fr;margin-top:clamp(47.5px,5.4vw,77.76px)} /* 46% less than the old clamp(88px,10vw,144px) */
 .closing-section{margin-top:clamp(26px,4vw,57.5px)} /* same gap as hero to cards and cards to banner */
 .dive-banner{aspect-ratio:1.84;border-bottom-left-radius:0;border-bottom-right-radius:0}
-.dive-banner .panel-photo{inset:auto;left:0;top:-79%;width:126.2%;height:auto;max-width:none;transform:translateY(8px)}
-.dive-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px 8%}
+.dive-banner .panel-photo{inset:auto;left:0;top:-66.13%;width:120.09%;height:auto;max-width:none} /* framing matched to the reference design */
+.dive-banner::after{opacity:.35} /* same brown overlay strength as the collection cards */
+.dive-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px .5%} /* text block sits lower, as in the reference */
 .dive-copy>*{transform:translateY(10px)}
-.dive-copy h2{font-size:clamp(60.3px,10.458vw,150.3px);line-height:1.05}
+.dive-copy h2{font-size:clamp(67px,11.62vw,167px);line-height:1.05} /* title back at the reference size */
 .dive-copy p{font-size:clamp(16.2px,2.7vw,38.7px);font-weight:600;line-height:1.05;letter-spacing:-.015em}
 .site-footer{position:relative;margin-top:-5px;border-radius:var(--round);background:var(--brown);color:#d8caba}
 .footer-inner{width:100%;max-width:1440px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:40px;min-height:350px;padding:24px calc(var(--gutter) + clamp(28px,7vw,100px)) 38px}
