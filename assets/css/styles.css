@@ -160,6 +160,7 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .product-card__price{font-size:13px;line-height:1.5;color:var(--muted);margin-top:2px}
 .shop-page+.site-footer{margin-top:0}
 /* Blog index: three thumbnails with their titles underneath (grey frames until photos are supplied; swap the div for an <img class="blog-card__image">). */
+.blog-page{padding-top:clamp(20px,3vw,43px);padding-bottom:clamp(52px,5.333vw,77px)}
 .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.083vw,30px)}
 .blog-card{min-width:0}
 .blog-card__image{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;border-radius:var(--round);background:#d9d9d9}
