@@ -90,3 +90,16 @@ document.querySelector('.search-form').addEventListener('submit', event => {
   renderSearch();
 });
 renderSearch();
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function syncDecorativeVideo() {
+  document.querySelectorAll('video.about-hero__video').forEach(video => {
+    if (reducedMotion.matches) {
+      video.pause();
+    } else {
+      video.play().catch(() => {});
+    }
+  });
+}
+syncDecorativeVideo();
+reducedMotion.addEventListener('change', syncDecorativeVideo);
