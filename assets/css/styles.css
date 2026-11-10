@@ -190,15 +190,31 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .product-card__details{padding:10px 2px 0}
   .product-card__name,.product-card__price{font-size:12px}
 }
+/* Tablet (641-1000px): the scaled desktop layout, with touch-friendly sizing on top: 44px tap targets, 12px+ text, ~1.5 line height. */
 @media(max-width:1000px) and (min-width:641px){
-  .story{grid-template-columns:1fr 1fr;gap:32px;margin-inline:0}
+  .utility-inner{font-size:12px}
+  .utility-inner>span{letter-spacing:.08em}
+  .desktop-nav a:not(.brand){padding:12px 6px}
+  .hero-button{min-height:44px;padding:0 calc(28px - .7em);font-size:16px}
+  .category-copy{top:8px}
+  .category-button{min-height:44px;padding:0 18px;font-size:14px;bottom:calc((100% - 10px)*.06 + 10px)}
+  .story{grid-template-columns:1fr 1fr;gap:40px;margin-inline:0}
   .story-copy h2{font-size:clamp(26px,3.75vw,38px)}
-  .story-copy>p{font-size:clamp(15px,2.05vw,20px);line-height:1.25;margin-top:22px}
+  .story-copy>p{font-size:17px;line-height:1.5;margin-top:22px}
   .story-button{font-size:19px;margin-top:24px}
+  .story-ocean .story-button,.story-community .story-button{min-height:48px;padding:0 28px;font-size:16px}
   .story-photo{height:100%;min-height:400px;aspect-ratio:765/1024}
   .story-community .story-photo{aspect-ratio:820/1024}
+  .closing-section{margin-top:calc(clamp(26px,4vw,57.5px)*1.4)} /* gap above the Dive In banner: 40% larger than the desktop value */
+  .about-community{margin-top:calc(clamp(26px,4vw,57.5px)*1.4)} /* About page: gap between the scrolling banner and the ocean story, 40% larger than desktop */
   .footer-brand{flex-basis:38%}
   .footer-inner{padding:26px calc(var(--gutter) + 30px);min-height:270px}
+  .footer-links{font-size:15px}
+  .footer-links>div{gap:0}
+  .footer-links h2{margin-bottom:2px}
+  .footer-links a,.footer-links button{display:inline-flex;align-items:center;min-height:44px}
+  address{font-size:15px}
+  address a{display:inline-flex;align-items:center;min-height:44px;margin-top:4px}
 }
 @media(max-width:640px){
   .utility-inner{font-size:10px;gap:8px}
