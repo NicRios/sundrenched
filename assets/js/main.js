@@ -103,3 +103,89 @@ function syncDecorativeVideo() {
 }
 syncDecorativeVideo();
 reducedMotion.addEventListener('change', syncDecorativeVideo);
+
+/* Phone-only collection carousel (640px and under): one card at a time, swipeable, rotating every 5 seconds, with dots.
+   Above 640px the three cards stay a plain grid and none of this runs. It pauses while the visitor hovers, touches or
+   focuses it, while the tab is hidden or the carousel is off screen, and it never auto-rotates with reduced motion. */
+const collectionTrack = document.querySelector('#collection');
+const collectionDots = document.querySelector('.collection-dots');
+if (collectionTrack && collectionDots) {
+  const phone = window.matchMedia('(max-width:640px)');
+  const slides = [...collectionTrack.querySelectorAll('.category')];
+  const dots = [...collectionDots.querySelectorAll('button')];
+  const rotateEvery = 5000;
+  let current = 0;
+  let timer = null;
+  let visible = true;
+  let held = false;
+
+  const slideStep = () => slides[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(collectionTrack).columnGap) || 0);
+  function showDot(index) {
+    current = index;
+    dots.forEach((dot, n) => dot.setAttribute('aria-current', String(n === index)));
+  }
+  let settleTimer = 0;
+  let travelling = false; // true while a script-driven slide is moving, so the dots jump straight to the target instead of flickering past the cards in between
+  function goTo(index, animate) {
+    showDot(index);
+    const smooth = animate && !reducedMotion.matches;
+    travelling = smooth;
+    clearTimeout(settleTimer);
+    if (smooth) settleTimer = setTimeout(() => { travelling = false; }, 900);
+    collectionTrack.scrollTo({ left: index * slideStep(), behavior: smooth ? 'smooth' : 'auto' });
+  }
+  function stopRotation() {
+    clearInterval(timer);
+    timer = null;
+  }
+  function startRotation() {
+    stopRotation();
+    if (!phone.matches || reducedMotion.matches) return;
+    timer = setInterval(() => {
+      if (document.hidden || !visible || held) return;
+      goTo((current + 1) % slides.length, true);
+    }, rotateEvery);
+  }
+  function hold() {
+    held = true;
+  }
+  function release() {
+    held = false;
+    startRotation(); // a full 5 seconds again after the visitor lets go
+  }
+  function syncCarousel() {
+    collectionDots.hidden = !phone.matches;
+    if (phone.matches) {
+      collectionTrack.setAttribute('aria-roledescription', 'carousel');
+      goTo(current, false);
+    } else {
+      collectionTrack.removeAttribute('aria-roledescription');
+      collectionTrack.scrollLeft = 0;
+    }
+    startRotation();
+  }
+
+  dots.forEach((dot, index) => dot.addEventListener('click', () => {
+    goTo(index, true);
+    startRotation();
+  }));
+  let scrollFrame = 0;
+  collectionTrack.addEventListener('scroll', () => {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      if (!phone.matches || travelling) return;
+      const index = Math.min(slides.length - 1, Math.max(0, Math.round(collectionTrack.scrollLeft / slideStep())));
+      if (index !== current) showDot(index);
+    });
+  }, { passive: true });
+  ['pointerenter', 'focusin'].forEach(type => collectionTrack.addEventListener(type, hold));
+  ['pointerleave', 'pointercancel', 'focusout'].forEach(type => collectionTrack.addEventListener(type, release));
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: 0.5 }).observe(collectionTrack);
+  }
+  window.addEventListener('resize', () => { if (phone.matches) goTo(current, false); });
+  phone.addEventListener('change', syncCarousel);
+  reducedMotion.addEventListener('change', startRotation);
+  syncCarousel();
+}
