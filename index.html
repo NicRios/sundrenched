@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=tablet-home4">
+  <link rel="stylesheet" href="assets/css/styles.css?v=mobile-dive10">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body id="top">
@@ -39,9 +39,9 @@
       </div>
     </nav>
     <div class="mobile-header">
-      <a class="mobile-shop" href="shop.html">Shop <span aria-hidden="true">↗</span></a>
-      <a class="brand" href="index.html#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"><span class="menu-icon" aria-hidden="true"></span><span>Menu</span></button>
+      <a class="brand" href="index.html#top" aria-label="Sun Drenched home"><span class="brand-crop" aria-hidden="true"><img src="assets/images/brand-reference.png" width="1440" height="4899" alt=""></span></a>
+      <a class="mobile-shop" href="shop.html">Shop <span aria-hidden="true">↗</span></a>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
       <a href="index.html#top">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="shop.html">Shop</a>
@@ -50,10 +50,18 @@
 
   <main id="main" class="page-shell">
     <section class="hero photo-panel" aria-labelledby="hero-title">
-      <img class="panel-photo" src="assets/images/hero-water-portrait.jpg?v=3" width="818" height="469" fetchpriority="high" alt="A woman floating in rippled water with her head tilted back, in black and white">
+      <picture>
+        <source media="(max-width:640px)" srcset="assets/images/hero-water-mobile.jpg?v=1" width="818" height="472">
+        <img class="panel-photo" src="assets/images/hero-water-portrait.jpg?v=3" width="818" height="469" fetchpriority="high" alt="A woman floating in rippled water with her head tilted back, in black and white">
+      </picture>
       <div class="hero-copy"><h1 id="hero-title">Heat Wave</h1><p>New Swimwear<br>Collection Live Now!</p><a class="button hero-button" href="shop.html">Shop now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="hero-hit-area" href="shop.html" aria-label="Explore the Heat Wave collection"></a></div>
     </section>
 
+    <div class="collection-dots" role="group" aria-label="Choose a collection" hidden>
+      <button type="button" aria-label="Show swimwear" aria-current="true"></button>
+      <button type="button" aria-label="Show wetsuits" aria-current="false"></button>
+      <button type="button" aria-label="Show jewelry" aria-current="false"></button>
+    </div>
     <section class="collection" id="collection" aria-label="Shop the collection">
       <article class="category photo-panel" id="wetsuits">
         <img class="panel-photo" src="assets/images/swimwear.png" width="680" height="1024" alt="Pink and chocolate sun-print one-piece swimsuit" loading="lazy">
