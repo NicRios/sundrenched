@@ -170,12 +170,18 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .photo-placeholder{background-color:#d8d4d0;background-image:conic-gradient(#cbc6c2 25%,transparent 0 50%,#cbc6c2 0 75%,transparent 0);background-size:clamp(40px,5vw,72px) clamp(40px,5vw,72px)}
 .photo-placeholder::after{display:none}
 .about-page{padding-bottom:clamp(48px,6vw,86px)}
-.about-hero{aspect-ratio:680/362;border-radius:var(--round)}
+.about-hero{position:relative;isolation:isolate;aspect-ratio:680/362;border-radius:var(--round);overflow:hidden;background:#e9c9d0}
+.about-hero::after{content:"";position:absolute;inset:0;background:rgba(40,26,22,.2);pointer-events:none}
+.about-hero__video{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.about-hero__title{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 var(--gutter) 40px;color:#fff;font-size:clamp(37.8px,7.2vw,103.5px);line-height:1.06;text-align:center;text-shadow:0 2px 28px rgba(40,26,22,.35)}
 .about-intro{max-width:80%;margin:clamp(56px,7.6vw,110px) auto 0;padding-bottom:clamp(30px,3.6vw,52px);text-align:center}
 .about-intro h2{max-width:64%;margin-inline:auto;font-size:clamp(26px,3.6vw,52px);line-height:1.02;letter-spacing:-.035em} /* wraps after "Care", as in the wireframe */
 .about-intro p{max-width:88%;margin:clamp(24px,3.4vw,49px) auto 0;font-size:clamp(16px,2.12vw,30.5px);line-height:1.12;color:var(--muted);letter-spacing:-.025em}
 .about-sellers{margin-top:clamp(56px,7.6vw,110px)}
 .about-sellers h2{font-family:'Montserrat',Arial,sans-serif;font-size:clamp(26px,3.6vw,52px);font-weight:400;line-height:1.02;letter-spacing:-.035em;text-align:center} /* same size, leading and tracking as the other section titles */
+.about-sellers h2 a{display:inline-flex;align-items:center;gap:.2em;color:inherit;transition:color .18s ease}
+.about-sellers h2 a:hover{color:var(--coral)}
+.about-sellers h2 svg{flex:none;width:.75em;height:.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round} /* same arrow as the Shop now button */
 .about-sellers__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(6px,.6vw,9px);margin-top:clamp(24px,3.4vw,49px)} /* heading-to-content gap matches the intro and story titles */
 .about-sellers__item{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:var(--round)}
 @media(max-width:640px){.about-intro{max-width:100%;margin-top:42px;padding-bottom:20px}.about-intro h2,.about-sellers h2{max-width:none;font-size:clamp(30px,8.1vw,42px);line-height:1.04}.about-intro p{max-width:none;font-size:16px;line-height:1.55;margin-top:20px;letter-spacing:0}.about-sellers{margin-top:48px}.about-sellers__grid{grid-template-columns:1fr 1fr;gap:10px}}
