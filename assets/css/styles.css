@@ -186,6 +186,7 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .about-sellers__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(6px,.6vw,9px);margin-top:clamp(24px,3.4vw,49px)} /* heading-to-content gap matches the intro and story titles */
 .about-sellers__item{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:var(--round)}
 @media(max-width:640px){.about-intro{max-width:100%;margin-top:42px;padding-bottom:20px}.about-intro h2,.about-sellers h2{max-width:none;font-size:clamp(30px,8.1vw,42px);line-height:1.04}.about-intro p{max-width:none;font-size:16px;line-height:1.55;margin-top:20px;letter-spacing:0}.about-sellers{margin-top:48px}.about-sellers__grid{grid-template-columns:1fr 1fr;gap:10px}}
+@media(max-width:640px){.about-hero{aspect-ratio:680/562}.about-hero__title{inset:auto;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.about-sellers h2{font-size:clamp(24px,7vw,34px)}.about-sellers__item:nth-child(1){order:4}.about-sellers__item:nth-child(2){order:3}.about-sellers__item:nth-child(3){order:1}.about-sellers__item:nth-child(4){order:2}} /* phones: smaller Best Sellers title; photo order is wetsuit, lei bikini, then bikini set, shark bodysuit */
 @media(max-width:640px){
   .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}
   .product-card__details{padding:10px 2px 0}
@@ -263,6 +264,7 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .ribbon-track{font-size:14px}
   .story,.story-community{grid-template-columns:1fr;gap:30px;margin-inline:0}
   .story-ocean{margin-top:22px}
+  .about-community{margin-top:33px} /* About page: gap between the scrolling banner and the ocean story, 50% more than the old 22px */
   .story-photo{aspect-ratio:4/5;max-height:590px}
   .story-copy h2{font-size:clamp(30px,8.1vw,42px);line-height:1.04}
   .story-copy>p{font-size:16px;line-height:1.55;margin-top:20px;letter-spacing:0}
