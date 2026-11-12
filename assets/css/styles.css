@@ -165,7 +165,8 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .blog-card{min-width:0}
 .blog-card__image{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;border-radius:var(--round);background:#d9d9d9}
 .blog-card__title{margin-top:clamp(16px,2.4vw,34px);font-family:'Montserrat',Arial,sans-serif;font-size:clamp(17px,2.083vw,30px);font-weight:600;line-height:1;color:var(--brown);max-width:88%}
-@media(max-width:640px){.blog-grid{grid-template-columns:1fr;gap:34px}.blog-card__title{font-size:22px;line-height:1.1;max-width:none}}
+.blog-card__more{display:none} /* phone-only 'Read More' line under each title (no post pages yet, so it is text, not a link) */
+@media(max-width:640px){.blog-grid{grid-template-columns:1fr;gap:34px}.blog-card__title{font-size:22px;line-height:1.1;max-width:none}.blog-card__more{display:block;margin-top:10px;font-size:16px;font-weight:500;line-height:1.2;color:var(--coral);text-decoration:underline;text-underline-offset:4px}}
 /* About page, from the wireframe: hero frame, centred intro, scrolling banner, community story (photo left), best sellers.
    Checkered .photo-placeholder frames stand in until photos are supplied: swap each div for an <img> in the same frame. */
 .photo-placeholder{background-color:#d8d4d0;background-image:conic-gradient(#cbc6c2 25%,transparent 0 50%,#cbc6c2 0 75%,transparent 0);background-size:clamp(40px,5vw,72px) clamp(40px,5vw,72px)}
@@ -188,6 +189,7 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 @media(max-width:640px){.about-intro{max-width:100%;margin-top:42px;padding-bottom:20px}.about-intro h2,.about-sellers h2{max-width:none;font-size:clamp(30px,8.1vw,42px);line-height:1.04}.about-intro p{max-width:none;font-size:16px;line-height:1.55;margin-top:20px;letter-spacing:0}.about-sellers{margin-top:48px}.about-sellers__grid{grid-template-columns:1fr 1fr;gap:10px}}
 @media(max-width:640px){.about-hero{aspect-ratio:680/562}.about-hero__title{inset:auto;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.about-sellers h2{font-size:clamp(24px,7vw,34px)}.about-sellers__item:nth-child(1){order:4}.about-sellers__item:nth-child(2){order:3}.about-sellers__item:nth-child(3){order:1}.about-sellers__item:nth-child(4){order:2}} /* phones: smaller Best Sellers title; photo order is wetsuit, lei bikini, then bikini set, shark bodysuit */
 @media(max-width:640px){
+  .shop-page:not(.blog-page){padding-top:10px} /* Shop only (the Blog page shares .shop-page): gap from the logo to the first photos 50% larger (20px -> 30px) */
   .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}
   .product-card__details{padding:10px 2px 0}
   .product-card__name,.product-card__price{font-size:12px}
