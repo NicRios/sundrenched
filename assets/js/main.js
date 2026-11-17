@@ -189,3 +189,9 @@ if (collectionTrack && collectionDots) {
   reducedMotion.addEventListener('change', startRotation);
   syncCarousel();
 }
+
+// Product pages: the cart is not connected in this prototype, so say so instead of doing nothing.
+document.querySelectorAll('.add-to-cart').forEach(button => button.addEventListener('click', () => {
+  const note = button.parentElement.querySelector('.cart-note');
+  if (note) note.textContent = 'Thanks for stopping by! Checkout isn\u2019t connected in this prototype.';
+}));
