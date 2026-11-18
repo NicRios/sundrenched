@@ -191,7 +191,54 @@ if (collectionTrack && collectionDots) {
 }
 
 // Product pages: the cart is not connected in this prototype, so say so instead of doing nothing.
+function replayClass(element, name) {
+  element.classList.remove(name);
+  void element.offsetWidth; // restart the CSS animation
+  element.classList.add(name);
+}
 document.querySelectorAll('.add-to-cart').forEach(button => button.addEventListener('click', () => {
   const note = button.parentElement.querySelector('.cart-note');
-  if (note) note.textContent = 'Thanks for stopping by! Checkout isn\u2019t connected in this prototype.';
+  if (note) {
+    note.textContent = 'Thanks for stopping by! Checkout isn\u2019t connected in this prototype.';
+    replayClass(note, 'is-new');
+  }
+  replayClass(button, 'is-added');
 }));
+
+// Motion: sections that start below the fold fade up as they scroll into view. The styles are in the motion block of styles.css.
+// Skipped when the visitor prefers reduced motion; with JavaScript off nothing is ever hidden.
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+  const phoneLayout = window.matchMedia('(max-width: 640px)').matches;
+  const revealSelectors = [
+    ...(phoneLayout ? [] : ['.collection .category']), // on phones the collection is a swipe carousel, so its cards are left alone
+    '.salt-ribbon', '.story-photo', '.story-copy', '.dive-banner',
+    '.about-intro', '.about-sellers h2', '.about-sellers__item',
+    '.blog-card', '.product-grid .product-card',
+    '.product-media', '.product-details__item', '.product-reviews', '.related__title',
+    '.footer-brand', '.footer-links'
+  ];
+  const targets = [...document.querySelectorAll(revealSelectors.join(','))].filter(element => {
+    if (element.offsetParent === null) return false;                     // not displayed
+    const box = element.getBoundingClientRect();
+    return box.top > window.innerHeight * 0.92;                          // already on screen (or above) = leave visible
+  });
+  if (targets.length) {
+    document.documentElement.classList.add('motion');
+    const observer = new IntersectionObserver(entries => {
+      entries.filter(entry => entry.isIntersecting).forEach((entry, index) => {
+        entry.target.style.setProperty('--reveal-delay', Math.min(index, 5) * 80 + 'ms');
+        entry.target.classList.add('is-in');
+        observer.unobserve(entry.target);
+      });
+      // Anything the visitor has already scrolled past (a jump to the footer or an anchor link) is shown at once, so nothing is left blank.
+      targets.forEach(element => {
+        if (!element.classList.contains('is-in') && element.getBoundingClientRect().bottom < 0) {
+          element.classList.add('is-in');
+          observer.unobserve(element);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+    targets.forEach(element => { element.classList.add('reveal'); observer.observe(element); });
+  }
+}
+

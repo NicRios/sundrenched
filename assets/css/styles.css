@@ -165,7 +165,7 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .blog-card{min-width:0}
 .blog-card__image{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;border-radius:var(--round);background:#d9d9d9}
 .blog-card__title{margin-top:clamp(16px,2.4vw,34px);font-family:'Montserrat',Arial,sans-serif;font-size:clamp(17px,2.083vw,30px);font-weight:600;line-height:1;color:var(--brown);max-width:88%}
-.blog-card__more{display:none} /* phone-only 'Read More' line under each title (no post pages yet, so it is text, not a link) */
+.blog-card__more{display:block;margin-top:clamp(8px,.9vw,13px);font-size:clamp(13px,1.25vw,18px);font-weight:500;line-height:1.2;color:var(--coral);text-decoration:underline;text-underline-offset:4px} /* 'Read More' line under each title at every width; phones override the size and gap just below (no post pages yet, so it is text, not a link) */
 @media(max-width:640px){.blog-grid{grid-template-columns:1fr;gap:34px}.blog-card__title{font-size:22px;line-height:1.1;max-width:none}.blog-card__more{display:block;margin-top:10px;font-size:16px;font-weight:500;line-height:1.2;color:var(--coral);text-decoration:underline;text-underline-offset:4px}}
 /* About page, from the wireframe: hero frame, centred intro, scrolling banner, community story (photo left), best sellers.
    Checkered .photo-placeholder frames stand in until photos are supplied: swap each div for an <img> in the same frame. */
@@ -186,8 +186,9 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
 .about-sellers h2 svg{flex:none;width:.75em;height:.75em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round} /* same arrow as the Shop now button */
 .about-sellers__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(6px,.6vw,9px);margin-top:clamp(24px,3.4vw,49px)} /* heading-to-content gap matches the intro and story titles */
 .about-sellers__item{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:var(--round)}
+.about-sellers__link{display:block;min-width:0} /* the best-seller photos link to their product pages; the link only holds the photo, so the grid is unchanged */
 @media(max-width:640px){.about-intro{max-width:100%;margin-top:42px;padding-bottom:20px}.about-intro h2,.about-sellers h2{max-width:none;font-size:clamp(30px,8.1vw,42px);line-height:1.04}.about-intro p{max-width:none;font-size:16px;line-height:1.55;margin-top:20px;letter-spacing:0}.about-sellers{margin-top:48px}.about-sellers__grid{grid-template-columns:1fr 1fr;gap:10px}}
-@media(max-width:640px){.about-hero{aspect-ratio:680/562}.about-hero__title{inset:auto;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.about-sellers h2{font-size:clamp(24px,7vw,34px)}.about-sellers__item:nth-child(1){order:4}.about-sellers__item:nth-child(2){order:3}.about-sellers__item:nth-child(3){order:1}.about-sellers__item:nth-child(4){order:2}} /* phones: smaller Best Sellers title; photo order is wetsuit, lei bikini, then bikini set, shark bodysuit */
+@media(max-width:640px){.about-hero{aspect-ratio:680/562}.about-hero__title{inset:auto;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.about-sellers h2{font-size:clamp(24px,7vw,34px)}.about-sellers__link:nth-child(1){order:4}.about-sellers__link:nth-child(2){order:3}.about-sellers__link:nth-child(3){order:1}.about-sellers__link:nth-child(4){order:2}} /* phones: smaller Best Sellers title; photo order is wetsuit, lei bikini, then bikini set, shark bodysuit */
 @media(max-width:640px){
   .shop-page:not(.blog-page){padding-top:10px} /* Shop only (the Blog page shares .shop-page): gap from the logo to the first photos 50% larger (20px -> 30px) */
   .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}
@@ -346,4 +347,106 @@ dialog .search-status{font-size:13px;margin:20px 0 8px}
   .product-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"media" "info" "reviews";row-gap:28px}
   .add-to-cart{width:100%}
 }
+/* ==========================================================================
+   Motion and interaction.
+   Everything below only animates opacity, position offsets (the translate and scale properties) and colour, so content, layout and
+   design are untouched. It all sits inside prefers-reduced-motion:no-preference, so visitors who ask for less motion get the static site.
+   Scroll reveals are driven by main.js (it adds .motion to <html> and .reveal / .is-in to elements); with JavaScript off nothing is hidden.
+   ========================================================================== */
+@media(prefers-reduced-motion:no-preference){
+  :root{--ease-out:cubic-bezier(.22,.8,.24,1);--ease-soft:cubic-bezier(.4,.1,.2,1)}
+  @keyframes rise{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+  @keyframes fade-in{from{opacity:0}to{opacity:1}}
+  @keyframes settle{from{scale:1.07}to{scale:1}}
+  @keyframes pop-in{from{opacity:0;translate:0 18px;scale:.97}to{opacity:1;translate:0 0;scale:1}}
+  @keyframes menu-drop{from{opacity:0;translate:0 -10px}to{opacity:1;translate:0 0}}
+  @keyframes soft-pulse{0%{scale:1}40%{scale:1.035}100%{scale:1}}
+  @keyframes tick{from{opacity:.3;rotate:-90deg}to{opacity:1;rotate:0deg}}
+
+  /* Entrance on load: only for what is already on screen, in CSS so there is no flash of unanimated content. */
+  .hero-copy h1{animation:rise .9s var(--ease-out) .15s backwards}
+  .hero-copy p{animation:rise .9s var(--ease-out) .3s backwards}
+  .hero-copy .hero-button{animation:rise .9s var(--ease-out) .45s backwards}
+  .hero .panel-photo{transform-origin:55% 100%;animation:settle 1.8s var(--ease-out) backwards}
+  .about-hero__title{animation:rise 1s var(--ease-out) .2s backwards}
+  .shop-page .product-grid .product-card,.blog-card{animation:rise .8s var(--ease-out) backwards}
+  .product-grid .product-card:nth-child(1),.blog-card:nth-child(1){animation-delay:.05s}
+  .product-grid .product-card:nth-child(2),.blog-card:nth-child(2){animation-delay:.12s}
+  .product-grid .product-card:nth-child(3),.blog-card:nth-child(3){animation-delay:.19s}
+  .product-grid .product-card:nth-child(4){animation-delay:.26s}
+  .product-grid .product-card:nth-child(5){animation-delay:.33s}
+  .product-grid .product-card:nth-child(6){animation-delay:.4s}
+  .product-grid .product-card:nth-child(7){animation-delay:.47s}
+  .product-grid .product-card:nth-child(8){animation-delay:.54s}
+  .product-media{animation:rise .9s var(--ease-out) .05s backwards}
+  .product-info>*{animation:rise .8s var(--ease-out) backwards}
+  .product-info>:nth-child(1){animation-delay:.1s}
+  .product-info>:nth-child(2){animation-delay:.17s}
+  .product-info>:nth-child(3){animation-delay:.24s}
+  .product-info>:nth-child(4){animation-delay:.3s}
+  .product-info>:nth-child(5){animation-delay:.36s}
+  .product-info>:nth-child(7){animation-delay:.44s}
+
+  /* Scroll reveals (classes added by main.js to elements that start below the fold). The footer clips its own content so a link waiting to rise can never lengthen the page. */
+  .site-footer{overflow:clip}
+  .motion .reveal{transition:opacity 1s var(--ease-out) var(--reveal-delay,0s),translate 1s var(--ease-out) var(--reveal-delay,0s)}
+  .motion .reveal:not(.is-in){opacity:0;translate:0 30px}
+  .motion .story-photo.reveal img{transition:scale 1.5s var(--ease-out) var(--reveal-delay,0s)}
+  .motion .story-photo.reveal:not(.is-in) img{scale:1.08}
+  .motion .product-reviews.reveal .rating-row__bar>span{transform-origin:left;transition:transform 1.1s var(--ease-out) calc(var(--reveal-delay,0s) + .25s)}
+  .motion .product-reviews.reveal:not(.is-in) .rating-row__bar>span{transform:scaleX(0)}
+
+  /* Buttons: soft glow on hover, press-down on click. */
+  .button{transition:background .2s ease,transform .25s var(--ease-out),box-shadow .3s ease}
+  .button:not(:disabled):hover{box-shadow:0 12px 26px -12px rgba(214,100,77,.65)}
+  .button:not(:disabled):active{transform:translateY(0) scale(.97);box-shadow:none}
+  .utility-actions .icon-button,.menu-toggle,.mobile-shop{transition:background .2s ease,scale .2s var(--ease-out)}
+  .icon-button:active,.menu-toggle:active,.mobile-shop:active{scale:.92}
+  .hero-button svg,.about-sellers h2 svg{transition:translate .3s var(--ease-out)}
+  .hero-button:hover svg,.hero-button:focus-visible svg,.about-sellers h2 a:hover svg,.about-sellers h2 a:focus-visible svg{translate:3px -3px}
+
+  /* Product and blog cards: the photo eases in on hover/focus inside its frame (the opaque details block hides the overflow below it). */
+  .product-card__link{overflow:hidden;border-radius:8px 8px 0 0}
+  .product-card__details{position:relative;background:var(--cream)}
+  .product-card__image,.blog-card__image,.about-sellers__item{transition:scale .9s var(--ease-out)}
+  .product-card__link:focus-visible .product-card__image,.about-sellers__link:focus-visible .about-sellers__item{scale:1.05}
+  .about-sellers__link{overflow:hidden;border-radius:var(--round)}
+  .blog-card__media{overflow:hidden;border-radius:var(--round)}
+
+  /* Menus, dialogs and the product accordion. */
+  .mobile-nav:not([hidden]){animation:menu-drop .3s var(--ease-out)}
+  dialog[open]{animation:pop-in .38s var(--ease-out)}
+  dialog[open]::backdrop{animation:fade-in .3s ease}
+  .product-details__item summary{transition:color .2s ease}
+  .product-details__item[open] .product-details__body{animation:rise .45s var(--ease-out)}
+  .product-details__item[open] summary::after{animation:tick .3s var(--ease-out)}
+  .add-to-cart.is-added{animation:soft-pulse .5s var(--ease-out)}
+  .cart-note.is-new{animation:rise .45s var(--ease-out)}
+  @supports selector(::details-content){
+    :root{interpolate-size:allow-keywords}
+    .product-details__item::details-content{block-size:0;overflow:hidden;transition:block-size .4s var(--ease-out),content-visibility .4s allow-discrete}
+    .product-details__item[open]::details-content{block-size:auto}
+  }
+}
+
+/* Hover-only effects (not on touch screens, where hover sticks). */
+@media(prefers-reduced-motion:no-preference) and (hover:hover){
+  .desktop-nav a:not(.brand),.desktop-nav button{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;background-origin:content-box;background-clip:content-box;transition:color .2s ease,background-size .35s var(--ease-out)}
+  .desktop-nav a:not(.brand):hover,.desktop-nav button:hover,.desktop-nav a:not(.brand):focus-visible{background-size:100% 2px}
+  .brand{transition:scale .5s var(--ease-out)}
+  .brand:hover{scale:1.035}
+  .utility-actions .icon-button:hover{scale:1.08}
+  .panel-photo{transition:scale 1.1s var(--ease-out)}
+  .category:hover .panel-photo,.dive-banner:hover .panel-photo{scale:1.05}
+  .hero:hover .panel-photo{scale:1.03}
+  .product-card__link:hover .product-card__image,.blog-card:hover .blog-card__image,.about-sellers__link:hover .about-sellers__item{scale:1.05}
+  .product-details__item summary:hover{color:#a4422f}
+  .search-result strong{transition:color .2s ease,translate .3s var(--ease-out)}
+  .search-result:hover strong{translate:4px 0}
+  .salt-ribbon:hover .ribbon-track{animation-play-state:paused}
+}
+
+/* Safety net: never leave anything hidden on paper. */
+@media print{.reveal{opacity:1!important;translate:none!important;transition:none!important}}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.ribbon-track{animation:none}}
