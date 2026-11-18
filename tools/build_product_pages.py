@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_VERSION = "product-pages"   # cache-busting tag on styles.css?v=...
+CSS_VERSION = "sellers-links"   # cache-busting tag on styles.css?v=...
 
 # ---------------------------------------------------------------------------
 # Product data, in Shop-page order
